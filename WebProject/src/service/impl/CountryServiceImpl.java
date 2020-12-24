@@ -1,5 +1,6 @@
 package service.impl;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,17 @@ public class CountryServiceImpl implements ICountryService{
 		return query;
 	}
 
-	
+	@Override
+	public String youdaoImg(String urlAddress) {
+		System.out.println("asdjfkalsdfjadkls");
+		String contentImg=youdao.yuodaoapi.youdao(urlAddress);
+		return contentImg;
+	}
+
+	@Override
+	public String youdaoVoice(String urlAddress) {
+		String contentString=youdao.youdaoapiVoice.GetVoice(urlAddress);
+		return contentString;
+	}
+
 }

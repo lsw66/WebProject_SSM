@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,26 @@ public class GetAllcountry {
 		String str=service.getcontent(in.getCode(), out.getCode(), text);
 		return str;
 		
+	}
+	
+	@RequestMapping(value="/ajaxImg.do",method=RequestMethod.POST)
+	@ResponseBody
+	public String ReturnImg(String img) throws IOException{
+		String imgString;
+//		System.out.println("img.do:  "+img);
+		System.out.println(img);
+		String [] split=img.split(",");
+//		System.out.println("减去后的："+split[1]);
+		imgString=service.youdaoImg(split[1]);
+		return imgString;
+	}
+	
+	@RequestMapping(value="/ajaxVoice.do",method=RequestMethod.POST)
+	@ResponseBody
+	public String ReturnVoice(String voice){
+		System.out.println(voice);
+		String [] split=voice.split(",");
+		String contentVoice=service.youdaoVoice(split[1]);
+		return contentVoice;
 	}
 }

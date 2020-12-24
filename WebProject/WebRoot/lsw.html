@@ -10,15 +10,26 @@
 	</head>
 	<body>
 		
+		<div id="logo">
+			<img src="/WebProject/images/xuexiao.png">
+		</div>
+
+		<div id="divide-wrap">
+		</div>
+
 		<div id="head">
 			<div id="in">
-				<select name="incode" id="incode" style="width:120px; height: 25px;">
+				<select name="incode" id="incode" style="width:120px; height: 30px; border-radius: 6px;">
 					<option value="">请选择原语种</option> 
 				</select>
 			</div>
 			
+			<div id="jiantou">
+				<img src="/WebProject/images/箭头.png" >
+			</div>
+
 			<div id="out">
-				<select name="outcode" id="outcode" style="width:120px; height: 25px;">
+				<select name="outcode" id="outcode" style="width:130px; height: 30px; border-radius: 6px;">
 					<option value ="">请选择目的语种</option>
 				</select>
 			</div>
@@ -26,6 +37,17 @@
 			<div id="bt">
 				<input type="button" value="点击翻译"  id="clickbutton">
 			</div>	
+
+			<div id="localImag">
+				<a href="javascript:;" class="file">选择图片
+					<input type="file" name="img" id="docfile"  onchange="setImagePreview();">
+				</a>
+			</div>
+			<div id="voice">
+				<a href="javascript:;" class="file">选择音频
+					<input type="file" name="img" id="docfileVoice"  onchange="setImagePreview2();">
+				</a>
+			</div>
 		</div>
 		
 		<div id="content">
@@ -42,6 +64,7 @@
 					<textarea name="text" id="textareaprint"  style="resize: none;" cols="47" rows="10" readonly oninput="font_size()"></textarea>
 				</div>
 		</div>
+		
+		
 	</body>
-	
 </html>
